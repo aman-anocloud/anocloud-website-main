@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --green-dark: #003b2d;
+  --green-primary: #005241;
+  --green-light: #56c48f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* globals.css */
+/* globals.css */
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.box {
+margin-left: auto;
+margin-right: auto;
+}
+/* Hide scrollbar for all browsers */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Site-wide responsive helpers */
+.site-hero {
+  padding-top: 8rem; /* same as py-32 */
+  padding-bottom: 8rem;
+  position: relative;
+}
+.site-hero .site-hero-content {
+  z-index: 10; /* keep content above background images */
+  text-align: center;
+}
+.site-hero h1 { font-size: 2.25rem; line-height: 1.1; }
+.site-hero p { font-size: 1rem; }
+.site-hero .hero-cta { display: inline-flex; gap: 0.5rem; }
+
+.site-contact { padding-top: 5rem; padding-bottom: 5rem; }
+.site-contact .contact-card { max-width: 900px; margin-left: auto; margin-right: auto; }
+
+/* color helpers */
+.text-green-dark { color: var(--green-dark) !important; }
+.text-green-primary { color: var(--green-primary) !important; }
+.text-green-light { color: var(--green-light) !important; }
+.bg-green-primary { background-color: var(--green-primary) !important; }
+.bg-green-dark { background-color: var(--green-dark) !important; }
+.bg-green-light { background-color: var(--green-light) !important; }
+.border-green-primary { border-color: var(--green-primary) !important; }
+.btn-green { background-color: var(--green-primary); color: #fff; }
+.btn-green:hover { background-color: var(--green-dark); }
+
+/* Partners ribbon */
+.partner-ribbon-section { background: linear-gradient(90deg, var(--green-light), var(--green-primary) 50%, var(--green-dark)); }
+.partner-ribbon { display:flex; gap:1.5rem; overflow-x:auto; -webkit-overflow-scrolling: touch; padding: 1.25rem 0; align-items:center; white-space:nowrap; }
+.partner-ribbon::-webkit-scrollbar { height: 8px; }
+.partner-ribbon::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 999px; }
+.partner-ribbon .partner-card { flex: 0 0 auto; background: white; padding: 0.75rem 1.25rem; border-radius: 0.75rem; box-shadow: 0 6px 18px rgba(0,0,0,0.06); display:flex; align-items:center; justify-content:center; min-width: 160px; }
+
+@media (min-width: 768px) {
+  .site-hero h1 { font-size: 3rem; }
+  .site-hero p { font-size: 1.125rem; }
+  .site-contact .contact-card { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.25rem; }
+}
+
+@media (min-width: 1024px) {
+  .site-hero h1 { font-size: 4rem; }
+  .site-hero p { font-size: 1.25rem; }
+}
